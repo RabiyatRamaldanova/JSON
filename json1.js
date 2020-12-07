@@ -81,7 +81,19 @@ const postcardArray = [
     ]
 
 
-    for(catalog of postcardArray) {
-        console.log("Названия категории: " + catalog.name)
-        console.log("id категории: " + catalog.id)
-    }
+    // for(catalog of postcardArray) {
+    //     console.log("Названия категории: " + catalog.name)
+    //     console.log("id категории: " + catalog.id)
+    // }
+
+    const arrayOfIdAndCategory = postcardArray.map(function(catalog) {
+        const objectInArray = {};
+
+        if (postcardArray.length > 0) {
+            objectInArray.categoryName = catalog.name;
+            objectInArray.categoryId = catalog.id;
+            return objectInArray;
+        }
+    });
+
+    console.log(arrayOfIdAndCategory);

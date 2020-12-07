@@ -81,10 +81,31 @@ const postcardArray = [
     ]
 
 
-    for(catalog of postcardArray) {
-       for (subCatalog of catalog.postcardList) {
-           console.log("id категории: " + subCatalog.id)
-           console.log("текст категории:")
-           console.log(subCatalog.text) 
-       }
-    }
+    // for(catalog of postcardArray) {
+    //    for (subCatalog of catalog.postcardList) {
+    //        console.log("id категории: " + subCatalog.id)
+    //        console.log("текст категории:")
+    //        console.log(subCatalog.text) 
+    //    }
+    // }
+
+    const arrayOfIdAndText = postcardArray.map(function(catalog) {
+        const objectInArray = {};
+
+        if (catalog.postcardList.length > 0) {
+            catalog.postcardList.map(function(catalog2) {
+
+                objectInArray.objectInSecondArray = {};
+
+                objectInArray.objectInSecondArray.id = catalog2.id;
+                objectInArray.objectInSecondArray.text = catalog2.text;
+                //return objectInArray.objectInSecondArray;
+            }
+            );
+            
+        }
+            return objectInArray;
+    });
+
+    console.log(arrayOfIdAndText);
+     
