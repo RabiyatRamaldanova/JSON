@@ -80,20 +80,8 @@ const postcardArray = [
     },
     ]
 
-
-    // for(catalog of postcardArray) {
-    //     console.log("Названия категории: " + catalog.name)
-    //     console.log("id категории: " + catalog.id)
-    // }
-
-    const arrayOfIdAndCategory = postcardArray.map(function(catalog) {
-        const objectInArray = {};
-
-        if (postcardArray.length > 0) {
-            objectInArray.categoryName = catalog.name;
-            objectInArray.categoryId = catalog.id;
-            return objectInArray;
-        }
+    const arrayOfIdAndCategory = [];
+    const mapArray = postcardArray.map(function(catalog) {
+        arrayOfIdAndCategory.push(`Category id = ${catalog.id}, Category name = ${catalog.name}`);
     });
-
     console.log(arrayOfIdAndCategory);

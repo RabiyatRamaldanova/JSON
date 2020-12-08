@@ -81,12 +81,13 @@ const postcardArray = [
     },
     ]
 
-    for(catalog of postcardArray) {
-        if (catalog.name == "КОЛЛЕГЕ") {
-            for (subCatalog of catalog.postcardList) {
-            console.log("id категории: " + subCatalog.id)
-           console.log("текст категории:")
-           console.log(subCatalog.text) 
-            }
+    const arrayAssociate = [];
+    const mapArray = postcardArray.map(function(catalog) {
+        if (catalog.id == 7) {
+            submap = Object.values(catalog.postcardList).map(function(subcatalog){
+                arrayAssociate.push(`Postcard id = ${subcatalog.id}, postcard text = ${subcatalog.text}`)
+            });   
         }
-    }
+    });
+
+    console.log(arrayAssociate);
